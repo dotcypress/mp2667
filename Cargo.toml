@@ -1,10 +1,10 @@
 [package]
 name = "mp2667"
-version = "0.0.1"
+version = "0.0.2"
 authors = ["Vitaly Domnikov <oss@vitaly.codes>"]
 edition = "2018"
-documentation = "https://docs.rs/st7032i"
-repository = "https://github.com/dotcypress/st7032i"
+documentation = "https://docs.rs/mp2667"
+repository = "https://github.com/dotcypress/mp2667"
 license = "MIT/Apache-2.0"
 description = "Platform agnostic Rust driver for the MP2667, highly integrated, single-cell, Li-ion/Li-polymer battery charger."
 readme = "README.md"
