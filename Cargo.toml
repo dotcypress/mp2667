@@ -1,6 +1,6 @@
 [package]
 name = "mp2667"
-version = "0.0.0"
+version = "0.0.1"
 authors = ["Vitaly Domnikov <oss@vitaly.codes>"]
 edition = "2018"
 documentation = "https://docs.rs/st7032i"
