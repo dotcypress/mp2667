@@ -12,11 +12,9 @@
 
 extern crate embedded_hal as hal;
 
-mod macros;
-mod registers;
+pub mod registers;
 
 use hal::blocking::i2c;
-use macros::*;
 use registers::*;
 
 /// Driver for the MP2667
