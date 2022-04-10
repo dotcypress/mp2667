@@ -3,7 +3,7 @@ use modular_bitfield::prelude::*;
 
 const I2C_ADDR: u8 = 0x09;
 
-pub trait ReadOnlyRegister: From<u8> {
+pub(crate) trait ReadOnlyRegister: From<u8> {
     const ADDR: u8;
 
     fn read<E, I2C: i2c::WriteRead<Error = E>>(i2c: &mut I2C) -> Result<Self, E> {
@@ -17,7 +17,7 @@ impl<RWR: ReadWriteRegister> ReadOnlyRegister for RWR {
     const ADDR: u8 = RWR::ADDR;
 }
 
-pub trait ReadWriteRegister: From<u8> + Into<u8> {
+pub(crate) trait ReadWriteRegister: From<u8> + Into<u8> {
     const ADDR: u8;
 
     fn write<E, I2C: i2c::Write<Error = E>>(self, i2c: &mut I2C) -> Result<(), E> {
