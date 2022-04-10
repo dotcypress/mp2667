@@ -1,12 +1,12 @@
 [package]
 name = "mp2667"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["Vitaly Domnikov <oss@vitaly.codes>"]
 edition = "2018"
 documentation = "https://docs.rs/mp2667"
 repository = "https://github.com/dotcypress/mp2667"
 license = "MIT/Apache-2.0"
-description = "Platform agnostic Rust driver for the MP2667, highly integrated, single-cell, Li-ion/Li-polymer battery charger."
+description = "Platform agnostic Rust driver for the MP2667, highly integrated, single-cell, Li-ion/Li-polymer battery charger IC."
 readme = "README.md"
 keywords = ["MP2667", "driver", "embedded-hal-driver"]
 categories = ["embedded", "hardware-support", "no-std"]

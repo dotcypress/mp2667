@@ -1,4 +1,5 @@
 use crate::*;
+use modular_bitfield::prelude::*;
 
 register_map!(
     InputSourceControl: 0x00, RW,

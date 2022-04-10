@@ -1,6 +1,6 @@
 # `mp2667`
 
-Platform agnostic Rust driver for the MP2667, highly integrated, single-cell, Li-ion/Li-polymer battery charger.
+Platform agnostic Rust driver for the [MP2667](https://www.monolithicpower.com/en/mp2667.html), highly integrated, single-cell, Li-ion/Li-polymer battery charger IC.
 
 ## Documentation
 

@@ -1,4 +1,6 @@
-use crate::*;
+use hal::blocking::i2c;
+
+const I2C_ADDR: u8 = 0x09;
 
 pub trait ReadOnlyRegister: From<u8> {
     const ADDR: u8;

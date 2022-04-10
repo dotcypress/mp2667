@@ -3,7 +3,7 @@
 //!
 //! ## The Device
 //!
-//!The MP2667 is a highly integrated, single-cell, Li-ion/Li-polymer battery charger
+//! The MP2667 is a highly integrated, single-cell, Li-ion/Li-polymer battery charger
 //! with system power path management for space-limited portable applications.
 //!
 //! - [Details and datasheet](https://www.monolithicpower.com/en/mp2667.html)
@@ -13,14 +13,11 @@
 extern crate embedded_hal as hal;
 
 mod macros;
-pub mod registers;
+mod registers;
 
 use hal::blocking::i2c;
 use macros::*;
-use modular_bitfield::prelude::*;
 use registers::*;
-
-pub const I2C_ADDR: u8 = 0x09;
 
 /// Driver for the MP2667
 #[derive(Debug)]
