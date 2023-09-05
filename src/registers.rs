@@ -76,7 +76,7 @@ register_map!(
     FaultFlags: 0x08, RO,
 );
 
-#[derive(BitfieldSpecifier, Debug, Eq, PartialEq)]
+#[derive(BitfieldSpecifier, Debug, Clone, Copy, Eq, PartialEq)]
 pub enum ChargeStatus {
     NotCharging,
     PreCharge,
@@ -85,7 +85,7 @@ pub enum ChargeStatus {
 }
 
 #[bitfield]
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
 pub struct SystemStatus {
     #[skip(setters)]
     pub thermal_regulation: bool,
@@ -102,7 +102,7 @@ pub struct SystemStatus {
 }
 
 #[bitfield]
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
 pub struct FaultFlags {
     #[skip]
     __: B2,
@@ -120,7 +120,7 @@ pub struct FaultFlags {
     __: bool,
 }
 
-#[derive(BitfieldSpecifier, Debug, Eq, PartialEq)]
+#[derive(BitfieldSpecifier, Debug, Clone, Copy, Eq, PartialEq)]
 pub enum ThermalThreshold {
     T60C,
     T80C,
@@ -129,7 +129,7 @@ pub enum ThermalThreshold {
 }
 
 #[bitfield]
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
 pub struct MiscellaneousOperationControl {
     pub thermal_regulation_threshold: ThermalThreshold,
     #[skip]
@@ -151,7 +151,7 @@ impl Default for MiscellaneousOperationControl {
     }
 }
 
-#[derive(BitfieldSpecifier, Debug, Eq, PartialEq)]
+#[derive(BitfieldSpecifier, Debug, Clone, Copy, Eq, PartialEq)]
 pub enum SafetyTimerPeriod {
     P20h,
     P5h,
@@ -159,7 +159,7 @@ pub enum SafetyTimerPeriod {
     P12h,
 }
 
-#[derive(BitfieldSpecifier, Debug, Eq, PartialEq)]
+#[derive(BitfieldSpecifier, Debug, Clone, Copy, Eq, PartialEq)]
 pub enum WatchdogTimerLimit {
     Disabled,
     L40s,
@@ -168,7 +168,7 @@ pub enum WatchdogTimerLimit {
 }
 
 #[bitfield]
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
 pub struct ChargeTerminationAndTimerControl {
     pub termination_control_enabled: bool,
     pub timer_period: SafetyTimerPeriod,
@@ -187,20 +187,20 @@ impl Default for ChargeTerminationAndTimerControl {
     }
 }
 
-#[derive(BitfieldSpecifier, Debug, Eq, PartialEq)]
+#[derive(BitfieldSpecifier, Debug, Clone, Copy, Eq, PartialEq)]
 pub enum RechargeThreshold {
     U150mV,
     U300mV,
 }
 
-#[derive(BitfieldSpecifier, Debug, Eq, PartialEq)]
+#[derive(BitfieldSpecifier, Debug, Clone, Copy, Eq, PartialEq)]
 pub enum PrechargeThreshold {
     U2800mV,
     U3000mV,
 }
 
 #[bitfield]
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
 pub struct ChargeVoltageControl {
     pub recharge_threshold: RechargeThreshold,
     pub precharge_threshold: PrechargeThreshold,
@@ -215,7 +215,7 @@ impl Default for ChargeVoltageControl {
     }
 }
 
-#[derive(BitfieldSpecifier, Debug, Eq, PartialEq)]
+#[derive(BitfieldSpecifier, Debug, Clone, Copy, Eq, PartialEq)]
 pub enum TerminalCurrent {
     I24mA,
     I52mA,
@@ -224,7 +224,7 @@ pub enum TerminalCurrent {
 }
 
 #[bitfield]
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
 pub struct DischargeAndTerminationCurrent {
     pub terminal_current: TerminalCurrent,
     #[skip]
@@ -243,7 +243,7 @@ impl Default for DischargeAndTerminationCurrent {
 }
 
 #[bitfield]
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
 pub struct ChargeCurrentControl {
     pub charge_current: B5,
     #[skip]
@@ -258,7 +258,7 @@ impl Default for ChargeCurrentControl {
     }
 }
 
-#[derive(BitfieldSpecifier, Debug, Eq, PartialEq)]
+#[derive(BitfieldSpecifier, Debug, Clone, Copy, Eq, PartialEq)]
 pub enum UVLOThreshold {
     U2400mV,
     U2500mV,
@@ -271,7 +271,7 @@ pub enum UVLOThreshold {
 }
 
 #[bitfield]
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
 pub struct PowerOnConfiguration {
     pub uvlo_threshold: UVLOThreshold,
     pub charge_disabled: bool,
@@ -289,7 +289,7 @@ impl Default for PowerOnConfiguration {
     }
 }
 
-#[derive(BitfieldSpecifier, Debug, Eq, PartialEq)]
+#[derive(BitfieldSpecifier, Debug, Clone, Copy, Eq, PartialEq)]
 pub enum InputCurrentLimit {
     I77mA,
     I118mA,
@@ -302,7 +302,7 @@ pub enum InputCurrentLimit {
 }
 
 #[bitfield]
-#[derive(Debug)]
+#[derive(Debug, Clone, Copy, Eq, PartialEq)]
 pub struct InputSourceControl {
     pub input_current_limit: InputCurrentLimit,
     pub input_minimum_voltage: B4,
